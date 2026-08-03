@@ -8,12 +8,20 @@ You can return the answer in any order.
 '''
 
 def twosum(nums,target):
-    for i in range(0,len(nums)):
-        for j in range(i+1,len(nums)):
-            if (nums[i]+nums[j])==target:
-                return (i,j)
+    seen={}
+
+    for i in range(len(nums)):
+        need = target-nums[i]
+
+        if need in seen:
+            return[seen[need],i]
+
+        seen[nums[i]]=i
+
+
+
             
-print(twosum([1,4,7,3,9],10))
+print(twosum([2,7,11,15],17))
 
 '''
 Time Complexity : O(n^2)
