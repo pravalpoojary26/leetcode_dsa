@@ -1,21 +1,31 @@
 
 '''
-Given an array of integers nums and an integer k, return the total number of subarrays
-whose sum equals to k.
+Given an array of integers nums and an integer k, 
+return the total number of subarrays whose sum equals to k.
 
 A subarray is a contiguous non-empty sequence of elements within an array.
 '''
-def subarray(nums,k):
-    arrays=[]
 
-    for i in range(len(nums)):
-        for j in range(i+1,len(nums)):
-            if nums[i]==k:
-                arrays.append(nums[i])
+def subarraysum(nums,k):
+    hasmap={0:1}
+    current_sum=0
+    count=0
 
-            if (nums[i]+nums[j])==k:
-                arrays.append([nums[i],nums[j]])
+    for num in nums:
+        current_sum+=num
 
-    return arrays
+        need = current_sum-k
 
-print(subarray([1,1,1],2))
+        if need in hasmap:
+            count+=hasmap[need]
+
+        if current_sum in hasmap:
+            hasmap[current_sum]+=1
+
+        else:
+            hasmap[current_sum]=1
+
+    return count
+
+print(subarraysum([0,0,0],0))
+            
