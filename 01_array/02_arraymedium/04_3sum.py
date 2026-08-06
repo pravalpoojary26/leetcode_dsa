@@ -9,13 +9,28 @@ Notice that the solution set must not contain duplicate triplets.
 
 def threesum(nums):
     triplets=[]
+    nums.sort()
+
     for i in range(len(nums)):
-        for j in range(i+1,len(nums)):
-            for k in range(j+1,len(nums)):
-                if nums[i]==nums[j]==nums[k]:
-                    continue
-                elif (nums[i]+nums[j]+nums[k]==0):
-                    triplets.append([nums[i],nums[j],nums[k]])
+        if i>=1:
+            if nums[i]==nums[i-1]:
+                continue
+        left=i+1
+        right=len(nums)-1
+
+        while left<right:
+            if nums[i]+nums[left]+nums[right]==0:
+                triplets.append([nums[i],nums[left],nums[right]])
+                left+=1
+                right-=1
+                while left<right and nums[left]==nums[left-1]:
+                    left+=1
+                while left<right and nums[right]==nums[right+1]:
+                    right-=1            
+            elif nums[i]+nums[left]+nums[right]<0:
+                left+=1
+            else:
+                right-=1
 
     return triplets
 

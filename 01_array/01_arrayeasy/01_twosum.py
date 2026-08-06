@@ -24,6 +24,6 @@ def twosum(nums,target):
 print(twosum([2,7,11,15],17))
 
 '''
-Time Complexity : O(n^2)
+Time Complexity : O(n)
 Space Complexity: O(1)
 '''
