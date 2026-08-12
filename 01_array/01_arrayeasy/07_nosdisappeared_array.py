@@ -15,4 +15,9 @@ def disappeared(arr):
 
 print(disappeared([2,3,2,1,5]))
 
+'''
+Time Complexity -> O(n)
+Space Complexity -> O(n)
+'''
+
     
