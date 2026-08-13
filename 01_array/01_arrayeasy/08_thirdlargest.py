@@ -25,5 +25,10 @@ def thirdlargest(arr):
 
     return third if third is not None else first
 
-        
+print(thirdlargest([5, 5, 5, 5])) 
+
+'''
+Time Complexity : O(n)
+Space Complexity : O(1)
+'''
             
