@@ -1,19 +1,20 @@
 
 '''
-Given an integer array nums sorted in non-decreasing order, 
+Given an integer array nums sorted in non-decreasing order,
 remove the duplicates in-place such that each unique element appears only once. 
 The relative order of the elements should be kept the same.
 
-Consider the number of unique elements in nums to be k​​​​​​​​​​​​​​. After removing duplicates,
- return the number of unique elements k.
+Consider the number of unique elements in nums to be k​​​​​​​​​​​​​​. 
+After removing duplicates, return the number of unique elements k.
 
 The first k elements of nums should contain the unique numbers in sorted order. 
 The remaining elements beyond index k - 1 can be ignored.
 '''
 
-def removedupliactes(nums):
-    slow=0
-    fast=1
+def removeduplicates(nums):
+    slow = 0
+    fast = 0
+
     while fast<len(nums):
         if nums[slow]==nums[fast]:
             fast+=1
@@ -23,11 +24,7 @@ def removedupliactes(nums):
 
     k = slow+1
 
-    return nums,k
+    return k 
 
-print(removedupliactes([1,1]))
+print(removeduplicates([]))    
 
-'''
-Time Complexity  → O(n)
-Space Complexity → O(1)
-'''
