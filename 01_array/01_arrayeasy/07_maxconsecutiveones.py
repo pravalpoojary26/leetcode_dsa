@@ -9,14 +9,13 @@ def maxones(nums):
 
     for i in nums:
         if i==0:
-            if count>maxcount:
-                maxcount=count
-                count=0
+            maxcount=max(maxcount,count)
+            count=0
+
         else:
             count+=1
 
-    if count>maxcount:
-        maxcount=count
+    maxcount=max(maxcount,count)
 
     return maxcount
 
