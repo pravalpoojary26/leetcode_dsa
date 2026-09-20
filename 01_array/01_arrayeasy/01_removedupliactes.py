@@ -12,19 +12,34 @@ The remaining elements beyond index k - 1 can be ignored.
 '''
 
 def removeduplicates(nums):
-    slow = 0
-    fast = 0
+    #Assigning two pointer 
+    left=0
+    right=0
 
-    while fast<len(nums):
-        if nums[slow]==nums[fast]:
-            fast+=1
+    while right<len(nums):
+        #IF values are not equal then first will increment left and then assign it 
+        if nums[left]!=nums[right]:
+            left+=1
+            nums[left]=nums[right]
+        #Otherwise will just increment right to check other elements 
         else:
-            slow+=1
-            nums[slow]=nums[fast]
+            right+=1
 
-    k = slow+1
+    #Unique elemennts 
+    return left+1
 
-    return k 
+print(removeduplicates([-3,-3,-2,-1,-1,0,0,0,2]))   
 
-print(removeduplicates([]))    
+'''
+Time Complexity is O(n)
+Space Complexity is O(1)
+
+Test Cases
+[1,1,2]
+[0,0,1,1,1,2,2,3,3,4]
+[1,2,3,4,5]
+[1,1,1,1,1]
+[-3,-3,-2,-1,-1,0,0,0,2]
+'''
+
 
