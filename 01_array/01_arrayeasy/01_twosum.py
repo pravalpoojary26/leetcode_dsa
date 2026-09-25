@@ -25,6 +25,9 @@ def twosum(nums,target):
 print(twosum([0,4,3,0],0))
 
 '''
+Time complexity : O(n)
+Space complexity : O(n)
+
 Test cases :
 
 [2, 7, 11, 15] , 9
