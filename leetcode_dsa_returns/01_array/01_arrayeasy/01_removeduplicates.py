@@ -25,4 +25,4 @@ def removeduplicates(nums):
 
     return k
 
-print(removeduplicates([1]))
+print(removeduplicates([2,2,5,6,6,7,7,8,9]))
