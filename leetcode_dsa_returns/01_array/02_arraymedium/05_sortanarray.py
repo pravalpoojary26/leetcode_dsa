@@ -47,8 +47,11 @@ def sortarray(nums):
     mergesort(0, len(nums) - 1)
     return nums
 
-
 print(sortarray([5,2,3,1]))
+
+'''
+solve by other sorting algorithms also 
+'''
         
 
 
